@@ -1,0 +1,33 @@
+<button mat-raised-button (click)="updateDetails()">Update Agent</button>
+<div *ngIf="!isLoggedIn()">
+  <h1>Hello unknown Agent!</h1>
+  <p>It seems there is no data! You have to update.</p>
+  <p>Click on the button above!</p>
+</div>
+
+<div *ngIf="isLoggedIn()">
+  <h1>Hello {{ user.symbol }}!</h1>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-grid-tile-header>
+        <h2>Wealth</h2>
+      </mat-grid-tile-header>
+      <div>
+        <p>You have {{ user.credits }} credits.</p>
+        <p>You command {{ user.shipCount }} ships.</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header>
+        <h2>Personal details</h2>
+      </mat-grid-tile-header>
+      <p>
+        Your headquarters is in {{ user.headquarters }} and you are part of the
+        faction {{ user.startingFaction }}.
+      </p>
+    </mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list>
+</div>

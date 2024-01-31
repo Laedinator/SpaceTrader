@@ -1,0 +1,18 @@
+.flex-container{
+display: flex;
+}
+
+.example-header {
+  position: top;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}
