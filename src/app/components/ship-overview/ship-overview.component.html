@@ -1,0 +1,24 @@
+<div class="content">
+  <h1>The following ships are at your command</h1>
+  <div class="flex-content">
+    <div class="ship-list">
+      <h2>Ships:</h2>
+      <mat-list>
+        <app-ship-overview-item
+          *ngFor="let ship of ships"
+          [ship]="ship"
+        ></app-ship-overview-item>
+      </mat-list>
+    </div>
+    <div class="ship-detail">
+      <div *ngIf="getActiveShip()">
+        <app-ship-detail-overview
+          [ship]="activeShip"
+        ></app-ship-detail-overview>
+      </div>
+      <div *ngIf="!getActiveShip()">
+        <h4>No selected ship</h4>
+      </div>
+    </div>
+  </div>
+</div>

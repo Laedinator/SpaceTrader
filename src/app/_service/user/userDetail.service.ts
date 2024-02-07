@@ -19,7 +19,6 @@ export class UserDetailService {
     this.userService.getAgent().subscribe({
       next: (response) => {
         console.log(response);
-
         this.createLocalUser(response);
       },
       error: (err) => {

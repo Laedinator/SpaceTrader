@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AgentDetailsComponent } from './agent-details/agent-details.component';
 import { UserDetailService } from '../_service/user/userDetail.service';
-import { NavbarComponent } from './navbar/navbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +12,9 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    MatSidenavModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatListModule,
     LandingPageComponent,
     AgentDetailsComponent,
-    NgIf,
-    NavbarComponent,
+    SidenavComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

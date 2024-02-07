@@ -2,15 +2,15 @@
 
 @include mat.core();
 
-$my-primary: mat.define-palette(mat.$blue-palette, 600);
-$my-accent: mat.define-palette(mat.$light-green-palette, A200, A100, A700);
+$my-primary: mat.define-palette(mat.$grey-palette, 900, 800);
+$my-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A700);
 $my-warn: mat.define-palette(mat.$red-palette, A200, A100, A700);
 
-$my-theme: mat.define-light-theme((
+$my-theme: mat.define-dark-theme((
  color: (
    primary: $my-primary,
    accent: $my-accent,
-   warn: $my-warn
+   warn: $my-warn,
  ),
  typography: mat.define-typography-config(),
  density: 0,
@@ -19,6 +19,7 @@ $my-theme: mat.define-light-theme((
 :root {
   --primary: #{mat.get-theme-color($my-theme, primary, default)};
   --primary-darker: #{mat.get-theme-color($my-theme, primary, darker)};
+  --primary-lighter:#{mat.get-theme-color($my-theme, primary, lighter)};
 
   --accent-lighter: #{mat.get-theme-color($my-theme, accent, lighter)};
   --accent: #{mat.get-theme-color($my-theme, accent, default)};
@@ -28,7 +29,9 @@ $my-theme: mat.define-light-theme((
   --warn: #{mat.get-theme-color($my-theme, warn, default)};
   --warn-darker: #{mat.get-theme-color($my-theme, warn, darker)};
 
-  --light-background: #fafafa;
+  --light: #f8f8f8;
 }
 
 @include mat.all-component-themes($my-theme);
+
+

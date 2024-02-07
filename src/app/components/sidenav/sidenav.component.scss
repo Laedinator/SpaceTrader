@@ -1,0 +1,58 @@
+:host {
+  // by default
+  width: var(--sidenav-collapsed-width);
+  &.is-expanded {
+    width: var(--sidenav-width);
+  }
+    box-sizing: border-box;
+    // makes the sidenav stay in place, even when content is scrollable
+    position: sticky;
+    top: 0;
+    border-right: 2px solid rgb(192, 192, 192);
+    transition: width 100ms cubic-bezier(.02,.68,.63,.98);
+  }
+  
+  .sidenav-body-container {
+    overflow-y: auto;
+    height: 100%;
+    padding-left: 16px;
+    box-sizing: border-box;
+    margin-top: 0;
+  }
+  
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    $size: 25px;
+    width: $size;
+    height: $size;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 48px;
+    right: calc($size / -2) - 2px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: silver;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid rgb(36, 82, 231);
+    }
+
+    &.is-flipped {
+      transform: rotate(-180deg);
+    }
+  
+    mat-icon {
+      font-size: 1.5em;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+  .sidenav-body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+

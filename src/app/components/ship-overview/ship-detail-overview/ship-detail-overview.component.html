@@ -1,0 +1,18 @@
+<h3>Details of {{ ship.symbol }}</h3>
+<div>
+  <h4>Cargo:</h4>
+  <p>Capacity: {{ ship.cargo.capacity - ship.cargo.units }}</p>
+  <div *ngIf="ship.cargo.inventory.length > 0">
+    <p>loaded items:</p>
+    <ul>
+      <li *ngFor="let cargoItem of ship.cargo.inventory">
+        {{ cargoItem.symbol }}, units: {{ cargoItem.units }}
+      </li>
+    </ul>
+  </div>
+</div>
+<mat-divider></mat-divider>
+<div>
+  <h4>Fuel:</h4>
+  <p>{{ ship.fuel.current }} of {{ ship.fuel.capacity }}</p>
+</div>

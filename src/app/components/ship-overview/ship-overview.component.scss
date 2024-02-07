@@ -1,0 +1,25 @@
+.flex-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content{
+    height: 100%;
+}
+
+.ship-list{
+    background-color: var(--primary-lighter);
+    width: fit-content;
+    max-width: 35%;
+}
+.ship-detail{
+    background-color: var(--primary-lighter);
+    width: 60%;
+    padding: 0 16px 0 16px;
+}
+
+h2{
+    padding-left: 16px;
+    margin-bottom: 0;
+}
